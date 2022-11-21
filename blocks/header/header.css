@@ -8,3 +8,10 @@
 	min-height: 74px;
 	height: 100%;
 }
+
+@media screen and (max-width: 984px) {
+	.header {
+		margin: 28px auto 0 auto;
+		min-height: 56px;
+	}
+}
