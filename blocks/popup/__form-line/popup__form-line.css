@@ -1,0 +1,14 @@
+.popup__form-line {
+	max-width: 356px;
+	width: 100%;
+	opacity: 0.2;
+	border: 1px solid #000000;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 568px) {
+	.popup__form-line {
+		margin-top: 3px;
+	}
+}
