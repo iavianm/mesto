@@ -1,0 +1,10 @@
+.element {
+	font-family: "Inter", Arial, sans-serif;
+	box-sizing: border-box;
+	background-color: #fff;
+	max-width: 282px;
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+.elements {
+	margin: 50px 0 0 0;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 361px);
+	gap: 20px 17px;
+}
+
+@media screen and (max-width: 984px) {
+	.elements {
+		margin-left: min(19px, 5%);
+		margin-right: min(19px, 5%);
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.elements {
+		margin-top: 36px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 361px);
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.elements {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(6, 361px);
+	}
+}
