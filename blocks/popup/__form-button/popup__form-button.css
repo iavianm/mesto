@@ -12,8 +12,8 @@
 	line-height: 22px;
 	text-align: center;
 	cursor: pointer;
-	border-radius: 2px;
 }
+
 .popup__form-button:hover {
 	opacity: 0.8;
 }
