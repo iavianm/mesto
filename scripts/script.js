@@ -1,6 +1,6 @@
 const page = document.querySelector(".page");
 const editButton = page.querySelector(".profile__edit-button");
-const closeButton = page.querySelector(".popup__close-button-img");
+const closeButton = page.querySelector(".popup__close-button");
 const formName = page.querySelector(".popup__input_name");
 const profileName = page.querySelector(".profile__name");
 const formDescription = page.querySelector(".popup__input_description");

@@ -17,23 +17,17 @@
 				<div class="profile__profile-info">
 					<h1 class="profile__name">Жак-Ив Кусто</h1>
 					<p class="profile__description">Исследователь океана</p>
-					<div class="profile__edit-button">
-						<img
-							class="profile__edit-button-img"
-							src="./images/pen.svg"
-							alt="изменить"
-							type="button"
-						/>
-					</div>
-				</div>
-				<div class="profile__add-button">
-					<img
-						class="profile__add-button-img"
-						src="./images/plus.svg"
-						alt="добавить"
+					<button
+						class="profile__edit-button"
+						aria-label="Изменить"
 						type="button"
-					/>
+					>
+						<span class="profile__edit-button-img"></span>
+					</button>
 				</div>
+				<button class="profile__add-button" aria-label="Добавить" type="button">
+					<span class="profile__add-button-img"></span>
+				</button>
 			</section>
 			<section class="elements">
 				<div class="element">
@@ -44,12 +38,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Карачаевск</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -60,12 +53,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Гора Эльбрус</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -76,12 +68,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Домбай</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -92,12 +83,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Гора Эльбрус</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -108,12 +98,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Домбай</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -124,12 +113,11 @@
 					/>
 					<div class="element__description">
 						<h2 class="element__title">Карачаево-Черкесия</h2>
-						<img
+						<button
 							class="element__like"
-							src="./images/like.svg"
-							alt="оценка"
+							aria-label="Оценка"
 							type="button"
-						/>
+						></button>
 					</div>
 				</div>
 			</section>
@@ -159,12 +147,11 @@
 					/>
 					<button class="popup__form-button" type="submit">Сохранить</button>
 				</form>
-				<img
-					class="popup__close-button-img"
-					src="./images/close.svg"
-					alt="закрыть"
+				<button
+					aria-label="Закрыть"
+					class="popup__close-button"
 					type="button"
-				/>
+				></button>
 			</div>
 		</div>
 		<script src="./scripts/script.js"></script>
