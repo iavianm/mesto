@@ -2,13 +2,13 @@
 	position: relative;
 	max-width: 336px;
 	width: 100%;
-	min-height: 73px;
 	height: 100%;
 	margin: auto 0 auto 29.5px;
 	box-sizing: border-box;
 	display: flex;
-	flex-direction: column;
-	overflow: auto;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 @media screen and (max-width: 750px) {
