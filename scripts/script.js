@@ -8,6 +8,9 @@ const profileDescription = page.querySelector(".profile__description");
 const formSubbmit = page.querySelector(".popup__form");
 const openPopup = page.querySelector(".popup");
 
+const elements = page.querySelectorAll(".element");
+const elementsContainer = page.querySelector(".elements");
+
 function editForm() {
 	openPopup.classList.add("popup_opened");
 	formName.value = profileName.textContent;
@@ -28,3 +31,12 @@ function formSubmitHandler(evt) {
 editButton.addEventListener("click", editForm);
 closeButton.addEventListener("click", closeForm);
 formSubbmit.addEventListener("submit", formSubmitHandler);
+
+const arr = Array.from(Array(elements.length).keys());
+
+arr.sort(() => Math.random() - 0.5);
+elementsContainer.innerHTML = "";
+
+for (let i = 0; i < elements.length; i += 1) {
+	elementsContainer.insertAdjacentHTML("beforeend", elements[arr[i]].outerHTML);
+}
