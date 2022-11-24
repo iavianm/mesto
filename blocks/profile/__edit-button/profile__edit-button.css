@@ -10,6 +10,7 @@
 	right: 0;
 	top: 16px;
 	cursor: pointer;
+	background-color: #000;
 }
 
 .profile__edit-button:hover {

@@ -8,26 +8,8 @@
 		<title>Mesto</title>
 	</head>
 	<body class="page">
-		<div class="popup">
-			<div class="popup__container">
-				<form class="popup__form">
-					<h3 class="popup__form-title">Редактировать профиль</h3>
-					<input class="popup__input-name" type="text" value="" />
-					<div class="popup__form-line"></div>
-					<input class="popup__input-description" type="text" value="" />
-					<div class="popup__form-line"></div>
-					<button class="popup__form-button" type="submit">Сохранить</button>
-				</form>
-			</div>
-			<img
-				class="popup__close-button-img"
-				src="./images/close.svg"
-				alt="закрыть"
-			/>
-		</div>
 		<header class="header">
 			<img class="header__logo" src="./images/header-logo.svg" alt="Логотип" />
-			<div class="header__line"></div>
 		</header>
 		<main class="content">
 			<section class="profile">
@@ -35,21 +17,17 @@
 				<div class="profile__profile-info">
 					<h1 class="profile__name">Жак-Ив Кусто</h1>
 					<p class="profile__description">Исследователь океана</p>
-					<div class="profile__edit-button">
-						<img
-							class="profile__edit-button-img"
-							src="./images/pen.svg"
-							alt="изменить"
-						/>
-					</div>
+					<button
+						class="profile__edit-button"
+						aria-label="Изменить"
+						type="button"
+					>
+						<span class="profile__edit-button-img"></span>
+					</button>
 				</div>
-				<div class="profile__add-button">
-					<img
-						class="profile__add-button-img"
-						src="./images/plus.svg"
-						alt="добавить"
-					/>
-				</div>
+				<button class="profile__add-button" aria-label="Добавить" type="button">
+					<span class="profile__add-button-img"></span>
+				</button>
 			</section>
 			<section class="elements">
 				<div class="element">
@@ -59,8 +37,12 @@
 						alt="Карачаевск"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Карачаевск</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Карачаевск</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -70,8 +52,12 @@
 						alt="Гора Эльбрус"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Гора Эльбрус</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Гора Эльбрус</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -81,8 +67,12 @@
 						alt="Домбай"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Домбай</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Домбай</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -92,8 +82,12 @@
 						alt="Гора Эльбрус"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Гора Эльбрус</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Гора Эльбрус</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -103,8 +97,12 @@
 						alt="Домбай"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Домбай</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Домбай</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 				<div class="element">
@@ -114,8 +112,12 @@
 						alt="Карачаево-Черкесия"
 					/>
 					<div class="element__description">
-						<h3 class="element__title">Карачаево-Черкесия</h3>
-						<img class="element__like" src="./images/like.svg" alt="оценка" />
+						<h2 class="element__title">Карачаево-Черкесия</h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
 					</div>
 				</div>
 			</section>
@@ -123,6 +125,35 @@
 		<footer class="footer">
 			<p class="footer__copyright">&copy;&nbsp;2022 Mesto Russia</p>
 		</footer>
+		<div class="popup">
+			<div class="popup__container">
+				<form class="popup__form" name="popupForm">
+					<h3 class="popup__form-title">Редактировать профиль</h3>
+					<input
+						class="popup__input popup__input_name"
+						type="text"
+						value=""
+						name="inputName"
+						placeholder="Ваше имя"
+						required
+					/>
+					<input
+						class="popup__input popup__input_description"
+						type="text"
+						value=""
+						name="inputDecsription"
+						placeholder="Род деятельности"
+						required
+					/>
+					<button class="popup__form-button" type="submit">Сохранить</button>
+				</form>
+				<button
+					aria-label="Закрыть"
+					class="popup__close-button"
+					type="button"
+				></button>
+			</div>
+		</div>
 		<script src="./scripts/script.js"></script>
 	</body>
 </html>

@@ -2,8 +2,7 @@
 	margin: 50px 0 0 0;
 	box-sizing: border-box;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 361px);
+	grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
 	gap: 20px 17px;
 }
 
@@ -17,14 +16,5 @@
 @media screen and (max-width: 750px) {
 	.elements {
 		margin-top: 36px;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(3, 361px);
-	}
-}
-
-@media screen and (max-width: 568px) {
-	.elements {
-		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(6, 361px);
 	}
 }
