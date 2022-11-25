@@ -6,15 +6,25 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	right: 0;
-	top: 16px;
+	margin-top: 6px;
 	cursor: pointer;
-	background-color: #000;
+	background-color: rgba(255, 255, 255, 0);
+	background-image: url(../../../images/pen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 10px 10px;
 }
 
 .profile__edit-button:hover {
 	opacity: 0.6;
+}
+
+@media screen and (max-width: 750px) {
+	.profile__edit-button {
+		position: absolute;
+		right: 0px;
+		top: 9px;
+	}
 }
 
 @media screen and (max-width: 568px) {
@@ -22,6 +32,7 @@
 		width: 18px;
 		height: 18px;
 		right: 22.25px;
-		top: 9px;
+		top: 3px;
+		background-size: 7.5px 7.5px;
 	}
 }
