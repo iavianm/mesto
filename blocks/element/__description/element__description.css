@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 984px) {
 	.element__description {
-		padding-left: 15px;
-		padding-right: 15px;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
