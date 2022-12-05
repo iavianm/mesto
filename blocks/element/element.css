@@ -1,5 +1,6 @@
 .element {
 	font-family: "Inter", Arial, sans-serif;
+	position: relative;
 	box-sizing: border-box;
 	background-color: #fff;
 	max-width: 282px;

@@ -30,7 +30,7 @@
 				></button>
 			</section>
 			<section class="elements">
-				<div class="element">
+				<!-- <div class="element">
 					<img
 						class="element__photo"
 						src="./images/karac.jpg"
@@ -119,7 +119,7 @@
 							type="button"
 						></button>
 					</div>
-				</div>
+				</div> -->
 			</section>
 		</main>
 		<footer class="footer">
@@ -127,8 +127,8 @@
 		</footer>
 		<div class="popup">
 			<div class="popup__container">
+				<h3 class="popup__form-title">Редактировать профиль</h3>
 				<form class="popup__form" name="popupForm">
-					<h3 class="popup__form-title">Редактировать профиль</h3>
 					<input
 						class="popup__input popup__input_form_name"
 						type="text"
@@ -154,6 +154,28 @@
 				></button>
 			</div>
 		</div>
+		<template id="element">
+			<div class="element">
+					<img
+						class="element__photo"
+						src=""
+						alt=""
+					/>
+					<button
+							class="element__delete"
+							aria-label="Удалить"
+							type="button"
+						></button>
+					<div class="element__description">
+						<h2 class="element__title"></h2>
+						<button
+							class="element__like"
+							aria-label="Оценка"
+							type="button"
+						></button>
+					</div>
+				</div>
+		</template>
 		<script src="./scripts/script.js"></script>
 	</body>
 </html>
