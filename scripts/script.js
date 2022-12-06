@@ -39,10 +39,10 @@ const profileDescription = profile.querySelector(".profile__description");
 const infoPopup = page.querySelector(".info-popup");
 const infoPopupForm = infoPopup.querySelector(".info-popup__form");
 const infoPopupFormInputName = infoPopupForm.querySelector(
-	".info-popup__form_input_name"
+	".info-popup__input_form_name"
 );
 const infoPopupFormInputDescription = infoPopupForm.querySelector(
-	".info-popup__form_input_decription"
+	".info-popup__input_form_decription"
 );
 const infoPopupFormButton = infoPopupForm.querySelector(
 	".info-popup__form-button"
@@ -59,10 +59,10 @@ const elements = page.querySelector(".elements");
 const cardPopup = page.querySelector(".card-popup");
 const cardPopupForm = cardPopup.querySelector(".card-popup__form");
 const cardPopupFormInputName = cardPopupForm.querySelector(
-	".card-popup__form_input_name"
+	".card-popup__input_form_name"
 );
 const cardPopupFormInputDescription = cardPopupForm.querySelector(
-	".card-popup__form_input_decription"
+	".card-popup__input_form_decription"
 );
 const cardPopupFormButton = cardPopupForm.querySelector(
 	".card-popup__form-button"
