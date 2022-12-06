@@ -30,96 +30,6 @@
 				></button>
 			</section>
 			<section class="elements">
-				<!-- <div class="element">
-					<img
-						class="element__photo"
-						src="./images/karac.jpg"
-						alt="Карачаевск"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Карачаевск</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div>
-				<div class="element">
-					<img
-						class="element__photo"
-						src="./images/gleb-lucky-7SF0nk9ddbY-unsplash.jpg"
-						alt="Гора Эльбрус"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Гора Эльбрус</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div>
-				<div class="element">
-					<img
-						class="element__photo"
-						src="./images/iam_os-GdbREkJCe-c-unsplash.jpg"
-						alt="Домбай"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Домбай</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div>
-				<div class="element">
-					<img
-						class="element__photo"
-						src="./images/irina-shishkina-WOZ0pBlkZ4A-unsplash.jpg"
-						alt="Гора Эльбрус"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Гора Эльбрус</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div>
-				<div class="element">
-					<img
-						class="element__photo"
-						src="./images/maria-olkhovaya-fYqoIwWstaA-unsplash.jpg"
-						alt="Домбай"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Домбай</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div>
-				<div class="element">
-					<img
-						class="element__photo"
-						src="./images/viktor-nikolaev-b7U11XfUonE-unsplash.jpg"
-						alt="Карачаево-Черкесия"
-					/>
-					<div class="element__description">
-						<h2 class="element__title">Карачаево-Черкесия</h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
-				</div> -->
 			</section>
 		</main>
 		<footer class="footer">
@@ -127,22 +37,18 @@
 		</footer>
 		<div class="popup">
 			<div class="popup__container">
-				<h3 class="popup__form-title">Редактировать профиль</h3>
+				<h3 class="popup__form-title"></h3>
 				<form class="popup__form" name="popupForm">
 					<input
 						class="popup__input popup__input_form_name"
 						type="text"
-						value=""
 						name="inputName"
-						placeholder="Ваше имя"
 						required
 					/>
 					<input
 						class="popup__input popup__input_form_decription"
 						type="text"
-						value=""
 						name="inputDecsription"
-						placeholder="Род деятельности"
 						required
 					/>
 					<button class="popup__form-button" type="submit">Сохранить</button>
@@ -154,27 +60,34 @@
 				></button>
 			</div>
 		</div>
+		<div class="image-popup">
+			<figure class="image-popup__container">
+				<img class="image-popup__photo" src="" alt="" />
+				<figcaption class="image-popup__figcaption"></figcaption>
+				<button
+					aria-label="Закрыть"
+					class="image-popup__close-button"
+					type="button"
+				></button>
+			</figure>
+		</div>
 		<template id="element">
 			<div class="element">
-					<img
-						class="element__photo"
-						src=""
-						alt=""
-					/>
+				<img class="element__photo" src="" alt="" />
+				<button
+					class="element__delete"
+					aria-label="Удалить"
+					type="button"
+				></button>
+				<div class="element__description">
+					<h2 class="element__title"></h2>
 					<button
-							class="element__delete"
-							aria-label="Удалить"
-							type="button"
-						></button>
-					<div class="element__description">
-						<h2 class="element__title"></h2>
-						<button
-							class="element__like"
-							aria-label="Оценка"
-							type="button"
-						></button>
-					</div>
+						class="element__like"
+						aria-label="Оценка"
+						type="button"
+					></button>
 				</div>
+			</div>
 		</template>
 		<script src="./scripts/script.js"></script>
 	</body>

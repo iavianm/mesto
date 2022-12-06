@@ -12,7 +12,7 @@
 	background-color: rgba(255, 255, 255, 0);
 	border: 0;
 	background-size: 18px 20px;
-	z-index: 2;
+	z-index: 1;
 	right: 20px;
 	top: 20px;
 }
