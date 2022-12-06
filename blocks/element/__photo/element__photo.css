@@ -3,6 +3,7 @@
 	max-height: 282px;
 	height: 100%;
   width: 100%;
+	cursor: pointer;
 }
 
 .element__photo:hover {
