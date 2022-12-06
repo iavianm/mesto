@@ -35,7 +35,7 @@ const profileAddButton = profile.querySelector(".profile__add-button");
 const profileName = profile.querySelector(".profile__name");
 const profileDescription = profile.querySelector(".profile__description");
 
-/* Попап */
+/* Попап инфо */
 const infoPopup = page.querySelector(".info-popup");
 const infoPopupForm = infoPopup.querySelector(".info-popup__form");
 const infoPopupFormInputName = infoPopupForm.querySelector(
@@ -99,8 +99,6 @@ function addElementCard(anyPopup) {
 	cardPopupFormInputName.placeholder = "Название";
 	cardPopupFormInputDescription.placeholder = "Ссылка на картинку";
 	cardPopupFormButton.textContent = "Создать";
-	cardPopupFormInputName.value = "";
-	cardPopupFormInputDescription.value = "";
 
 	openPopup(anyPopup);
 }
@@ -152,6 +150,9 @@ function elementCardSubmitHandler(event) {
 		link: cardPopupFormInputDescription.value,
 	};
 	createCard(newUserCard);
+
+	cardPopupFormInputName.value = "";
+	cardPopupFormInputDescription.value = "";
 
 	closePopup(cardPopup);
 }
