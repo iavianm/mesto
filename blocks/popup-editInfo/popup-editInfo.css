@@ -1,4 +1,4 @@
-.popup_opened {
+.popup-editInfo {
 	font-family: "Inter", Arial, sans-serif;
 	position: fixed;
 	margin: 0;
@@ -8,6 +8,8 @@
 	left: 0;
 	z-index: 1;
 	display: flex;
-	visibility: visible;
-	opacity: 1;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.5s, opacity 0.5s linear;
 }

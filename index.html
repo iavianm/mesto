@@ -35,27 +35,52 @@
 		<footer class="footer">
 			<p class="footer__copyright">&copy;&nbsp;2022 Mesto Russia</p>
 		</footer>
-		<div class="popup">
-			<div class="popup__container">
-				<h3 class="popup__form-title"></h3>
-				<form class="popup__form" name="popupForm">
+		<div class="popup-editInfo">
+			<div class="popup-editInfo__container">
+				<h3 class="popup-editInfo__form-title"></h3>
+				<form class="popup-editInfo__form" name="popupEditInfoForm">
 					<input
-						class="popup__input popup__input_form_name"
+						class="popup-editInfo__input popup-editInfo__form_input_name"
 						type="text"
 						name="inputName"
 						required
 					/>
 					<input
-						class="popup__input popup__input_form_decription"
+						class="popup-editInfo__input popup-editInfo__form_input_decription"
 						type="text"
 						name="inputDecsription"
 						required
 					/>
-					<button class="popup__form-button" type="submit">Сохранить</button>
+					<button class="popup-editInfo__form-button" type="submit"></button>
 				</form>
 				<button
 					aria-label="Закрыть"
-					class="popup__close-button"
+					class="popup-editInfo__close-button"
+					type="button"
+				></button>
+			</div>
+		</div>
+		<div class="popup-addCard">
+			<div class="popup-addCard__container">
+				<h3 class="popup-addCard__form-title"></h3>
+				<form class="popup-addCard__form" name="popupAddCardForm">
+					<input
+						class="popup-addCard__input popup-addCard__form_input_name"
+						type="text"
+						name="inputName"
+						required
+					/>
+					<input
+						class="popup-addCard__input popup-addCard__form_input_decription"
+						type="text"
+						name="inputDecsription"
+						required
+					/>
+					<button class="popup-addCard__form-button" type="submit"></button>
+				</form>
+				<button
+					aria-label="Закрыть"
+					class="popup-addCard__close-button"
 					type="button"
 				></button>
 			</div>
