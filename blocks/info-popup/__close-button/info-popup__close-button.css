@@ -1,4 +1,4 @@
-.popup-editInfo__close-button {
+.info-popup__close-button {
 	max-width: 32px;
 	max-height: 32px;
 	width: 100%;
@@ -17,12 +17,12 @@
 	border: 0;
 }
 
-.popup-editInfo__close-button:hover {
+.info-popup__close-button:hover {
 	opacity: 0.6;
 }
 
 @media screen and (max-width: 568px) {
-	.popup-editInfo__close-button {
+	.info-popup__close-button {
 		max-width: 20px;
 		max-height: 20px;
 		top: -374px;
