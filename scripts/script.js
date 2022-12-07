@@ -84,21 +84,8 @@ const imagePopupCloseButton = imagePopup.querySelector(
 const templateElement = page.querySelector("#element").content;
 
 function editProfileInfo(anyPopup) {
-	infoPopupFormTitle.textContent = "Редактировать профиль";
 	infoPopupFormInputName.value = profileName.textContent;
 	infoPopupFormInputDescription.value = profileDescription.textContent;
-	infoPopupFormInputName.placeholder = "Ваше имя";
-	infoPopupFormInputDescription.placeholder = "Род деятельности";
-	infoPopupFormButton.textContent = "Сохранить";
-
-	openPopup(anyPopup);
-}
-
-function addElementCard(anyPopup) {
-	cardPopupFormTitle.textContent = "Новое место";
-	cardPopupFormInputName.placeholder = "Название";
-	cardPopupFormInputDescription.placeholder = "Ссылка на картинку";
-	cardPopupFormButton.textContent = "Создать";
 
 	openPopup(anyPopup);
 }
@@ -149,7 +136,8 @@ function elementCardSubmitHandler(event) {
 		name: cardPopupFormInputName.value,
 		link: cardPopupFormInputDescription.value,
 	};
-	createCard(newUserCard);
+	const card = createCard(newUserCard);
+	addCard(card, elements);
 
 	cardPopupFormInputName.value = "";
 	cardPopupFormInputDescription.value = "";
@@ -158,7 +146,8 @@ function elementCardSubmitHandler(event) {
 }
 
 initialCards.forEach((el) => {
-	createCard(el);
+	const card = createCard(el);
+	addCard(card, elements);
 });
 
 function createCard(el) {
@@ -167,7 +156,7 @@ function createCard(el) {
 	userCard.querySelector(".element__photo").alt = el.name;
 	userCard.querySelector(".element__title").textContent = el.name;
 
-	addCard(userCard, elements);
+	return userCard;
 }
 
 function addCard(card, container) {
@@ -179,7 +168,7 @@ profileEditButton.addEventListener("click", () => {
 });
 
 profileAddButton.addEventListener("click", () => {
-	addElementCard(cardPopup);
+	openPopup(cardPopup);
 });
 
 cardPopupCloseButton.addEventListener("click", () => {
