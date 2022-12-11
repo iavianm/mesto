@@ -1,15 +1,8 @@
 .element__description {
-	margin: 21px auto 0 auto;
+	margin: 21px 0 0 0;
+	padding: 0 19px;
 	display: flex;
-	max-width: 246px;
 	width: 100%;
 	justify-content: space-between;
 	box-sizing: border-box;
-}
-
-@media screen and (max-width: 984px) {
-	.element__description {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
 }

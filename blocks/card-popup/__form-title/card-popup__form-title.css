@@ -1,4 +1,4 @@
-.popup__form-title {
+.card-popup__form-title {
 	margin: 0 0 44px 0;
 	font-style: normal;
 	font-weight: 900;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 568px) {
-	.popup__form-title {
+	.card-popup__form-title {
 		font-size: 18px;
 		line-height: 22px;
 		margin-bottom: 71px;

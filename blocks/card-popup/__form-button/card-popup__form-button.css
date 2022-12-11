@@ -1,0 +1,29 @@
+.card-popup__form-button {
+	display: block;
+	width: 358px;
+	height: 50px;
+	margin: 22px 0 0 0;
+	padding: 0;
+	background: #000000;
+	border-radius: 2px;
+	border: 0;
+	color: #fff;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.card-popup__form-button:hover {
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 568px) {
+	.card-popup__form-button {
+		width: 238px;
+		height: 46px;
+		font-size: 14px;
+		line-height: 17px;
+		margin-top: 20px;
+	}
+}
