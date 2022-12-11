@@ -34,67 +34,67 @@
 		<footer class="footer">
 			<p class="footer__copyright">&copy;&nbsp;2022 Mesto Russia</p>
 		</footer>
-		<div class="info-popup">
-			<div class="info-popup__container">
-				<h3 class="info-popup__form-title">Редактировать профиль</h3>
-				<form class="info-popup__form" name="infoPopupForm">
+		<div class="popup info-popup">
+			<div class="popup__container info-popup__container">
+				<h3 class="popup__form-title info-popup__form-title">Редактировать профиль</h3>
+				<form class="popup__form info-popup__form" name="infoPopupForm">
 					<input
-						class="info-popup__input info-popup__input_form_name"
+						class="popup__input info-popup__input_form_name"
 						type="text"
 						name="inputName"
 						placeholder = "Ваше имя"
 						required
 					/>
 					<input
-						class="info-popup__input info-popup__input_form_decription"
+						class="popup__input info-popup__input_form_decription"
 						type="text"
 						name="inputDecsription"
 						placeholder = "Род деятельности"
 						required
 					/>
-					<button class="info-popup__form-button" type="submit">Сохранить</button>
+					<button class="popup__form-button info-popup__form-button" type="submit">Сохранить</button>
 				</form>
 				<button
 					aria-label="Закрыть"
-					class="info-popup__close-button"
+					class="popup__close-button info-popup__close-button"
 					type="button"
 				></button>
 			</div>
 		</div>
-		<div class="card-popup">
-			<div class="card-popup__container">
-				<h3 class="card-popup__form-title">Новое место</h3>
-				<form class="card-popup__form" name="cardPopupForm">
+		<div class="popup card-popup">
+			<div class="popup__container card-popup__container">
+				<h3 class="popup__form-title card-popup__form-title">Новое место</h3>
+				<form class="popup__form card-popup__form" name="cardPopupForm">
 					<input
-						class="card-popup__input card-popup__input_form_name"
+						class="popup__input card-popup__input_form_name"
 						type="text"
 						name="inputName"
 						placeholder = "Название"
 						required
 					/>
 					<input
-						class="card-popup__input card-popup__input_form_decription"
+						class="popup__input card-popup__input_form_decription"
 						type="text"
 						name="inputDecsription"
 						placeholder = "Ссылка на картинку"
 						required
 					/>
-					<button class="card-popup__form-button" type="submit">Создать</button>
+					<button class="popup__form-button card-popup__form-button" type="submit">Создать</button>
 				</form>
 				<button
 					aria-label="Закрыть"
-					class="card-popup__close-button"
+					class="popup__close-button card-popup__close-button"
 					type="button"
 				></button>
 			</div>
 		</div>
-		<div class="image-popup">
-			<figure class="image-popup__container">
-				<img class="image-popup__photo" />
-				<figcaption class="image-popup__figcaption"></figcaption>
+		<div class="popup image-popup">
+			<figure class="popup__container-image">
+				<img class="popup__photo" />
+				<figcaption class="popup__figcaption"></figcaption>
 				<button
 					aria-label="Закрыть"
-					class="image-popup__close-button"
+					class="popup__close-button image-popup__close-button"
 					type="button"
 				></button>
 			</figure>

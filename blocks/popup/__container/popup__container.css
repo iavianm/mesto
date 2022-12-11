@@ -1,4 +1,4 @@
-.info-popup__container {
+.popup__container {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 568px) {
-	.info-popup__container {
+	.popup__container {
 		max-width: 282px;
 		padding: 24px 22px;
 	}

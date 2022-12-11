@@ -74,8 +74,8 @@ const cardPopupCloseButton = cardPopup.querySelector(
 
 /* Попап изображений */
 const imagePopup = page.querySelector(".image-popup");
-const imagePopupPhoto = imagePopup.querySelector(".image-popup__photo");
-const imagePopupTitle = imagePopup.querySelector(".image-popup__figcaption");
+const imagePopupPhoto = imagePopup.querySelector(".popup__photo");
+const imagePopupTitle = imagePopup.querySelector(".popup__figcaption");
 const imagePopupCloseButton = imagePopup.querySelector(
 	".image-popup__close-button"
 );
@@ -136,6 +136,7 @@ function elementCardSubmitHandler(event) {
 		name: cardPopupFormInputName.value,
 		link: cardPopupFormInputDescription.value,
 	};
+	
 	const card = createCard(newUserCard);
 	addCard(card, elements);
 
