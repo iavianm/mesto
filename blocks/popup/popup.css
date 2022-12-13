@@ -1,4 +1,4 @@
-.info-popup {
+.popup {
 	font-family: "Inter", Arial, sans-serif;
 	position: fixed;
 	margin: 0;
@@ -8,6 +8,9 @@
 	left: 0;
 	z-index: 1;
 	display: flex;
+
+	justify-content: center;
+  align-items: center;
 
 	visibility: hidden;
 	opacity: 0;
