@@ -86,8 +86,10 @@ initialCards.forEach((el) => {
 
 function createCard(el) {
   const userCard = templateElement.cloneNode(true);
-  userCard.querySelector('.element__photo').src = el.link;
-  userCard.querySelector('.element__photo').alt = el.name;
+
+  const photoElement = userCard.querySelector('.element__photo');
+  photoElement.src = el.link;
+  photoElement.alt = el.name;
   userCard.querySelector('.element__title').textContent = el.name;
 
   userCard.querySelector('.element__like').addEventListener('click', (event) => {
@@ -98,7 +100,7 @@ function createCard(el) {
     event.target.closest('.element').remove();
   });
 
-  userCard.querySelector('.element__photo').addEventListener('click', (event) => {
+  photoElement.addEventListener('click', (event) => {
     imagePopupPhoto.src = event.target.src;
     imagePopupPhoto.alt = event.target.alt;
     imagePopupTitle.textContent = event.target.alt;
