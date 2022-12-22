@@ -12,9 +12,7 @@ const profileDescription = profile.querySelector('.profile__description');
 const infoPopup = page.querySelector('.info-popup');
 const infoPopupForm = infoPopup.querySelector('.info-popup__form');
 const infoPopupFormInputName = infoPopupForm.querySelector('.info-popup__input_form_name');
-const infoPopupFormInputDescription = infoPopupForm.querySelector('.info-popup__input_form_decription');
-const infoPopupFormButton = infoPopupForm.querySelector('.info-popup__form-button');
-const infoPopupFormTitle = infoPopup.querySelector('.info-popup__form-title');
+const infoPopupFormInputDescription = infoPopupForm.querySelector('.info-popup__input_form_description');
 const infoPopupCloseButton = infoPopup.querySelector('.info-popup__close-button');
 
 /* Карточки */
@@ -24,9 +22,7 @@ const elements = page.querySelector('.elements');
 const cardPopup = page.querySelector('.card-popup');
 const cardPopupForm = cardPopup.querySelector('.card-popup__form');
 const cardPopupFormInputName = cardPopupForm.querySelector('.card-popup__input_form_name');
-const cardPopupFormInputDescription = cardPopupForm.querySelector('.card-popup__input_form_decription');
-const cardPopupFormButton = cardPopupForm.querySelector('.card-popup__form-button');
-const cardPopupFormTitle = cardPopup.querySelector('.card-popup__form-title');
+const cardPopupFormInputDescription = cardPopupForm.querySelector('.card-popup__input_form_description');
 const cardPopupCloseButton = cardPopup.querySelector('.card-popup__close-button');
 
 /* Попап изображений */
@@ -84,6 +80,22 @@ initialCards.forEach((el) => {
   addCard(card, elements);
 });
 
+function addChangeLike(event) {
+  event.target.classList.toggle('element__like_active');
+}
+
+function addRemoveCard(event) {
+  event.target.closest('.element').remove();
+}
+
+function addImagePopup(event) {
+  imagePopupPhoto.src = event.target.src;
+  imagePopupPhoto.alt = event.target.alt;
+  imagePopupTitle.textContent = event.target.alt;
+
+  openPopup(imagePopup);
+}
+
 function createCard(el) {
   const userCard = templateElement.cloneNode(true);
 
@@ -91,22 +103,11 @@ function createCard(el) {
   photoElement.src = el.link;
   photoElement.alt = el.name;
   userCard.querySelector('.element__title').textContent = el.name;
+  userCard.querySelector('.element__like').addEventListener('click', addChangeLike);
 
-  userCard.querySelector('.element__like').addEventListener('click', (event) => {
-    event.target.classList.toggle('element__like_active');
-  });
+  userCard.querySelector('.element__delete').addEventListener('click', addRemoveCard);
 
-  userCard.querySelector('.element__delete').addEventListener('click', (event) => {
-    event.target.closest('.element').remove();
-  });
-
-  photoElement.addEventListener('click', (event) => {
-    imagePopupPhoto.src = event.target.src;
-    imagePopupPhoto.alt = event.target.alt;
-    imagePopupTitle.textContent = event.target.alt;
-
-    openPopup(imagePopup);
-  });
+  photoElement.addEventListener('click', addImagePopup);
 
   return userCard;
 }
