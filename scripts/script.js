@@ -4,7 +4,7 @@ function editProfileInfo(anyPopup, button) {
 
   if(infoInputName.value !== '' || infoInputDescription.value !== '') {
     button.classList.remove('popup__form-button_disabled')
-    button.setAttribute("disabled", false);
+    button.removeAttribute("disabled");
   }
 
   openPopup(anyPopup);
