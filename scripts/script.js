@@ -2,9 +2,9 @@ function editProfileInfo(anyPopup, button) {
   infoInputName.value = profileName.textContent;
   infoInputDescription.value = profileDescription.textContent;
 
-  if(infoInputName.value === '' || infoInputDescription.value === '') {
-    button.classList.add('popup__form-button_disabled')
-    button.setAttribute("disabled", "disabled");
+  if(infoInputName.value !== '' || infoInputDescription.value !== '') {
+    button.classList.remove('popup__form-button_disabled')
+    button.setAttribute("disabled", false);
   }
 
   openPopup(anyPopup);
