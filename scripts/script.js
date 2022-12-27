@@ -28,20 +28,18 @@ function openPopup(anyPopup) {
 function closePopupByEscape(evt) {
   if (evt.key === 'Escape') {
     const openPopup = document.querySelector('.popup_opened');
-    const form = openPopup.querySelector('.popup__form')
-    closePopup(openPopup, form);
+    closePopup(openPopup);
   }
 }
 
 function closePopupByOverlay(evt) {
   if (evt.target.classList.contains('popup_opened')) {
     const openPopup = document.querySelector('.popup_opened');
-    const form = openPopup.querySelector('.popup__form')
-    closePopup(openPopup, form);
+    closePopup(openPopup);
   }
 }
 
-function closePopup(anyPopup, form) {
+function closePopup(anyPopup) {
   anyPopup.classList.remove('popup_opened');
 
   document.removeEventListener('keydown', closePopupByEscape);
@@ -152,3 +150,13 @@ imagePopupCloseButton.addEventListener('click', () => {
 
 formInfo.addEventListener('submit', profileInfoSubmitHandler);
 formCard.addEventListener('submit', elementCardSubmitHandler);
+
+
+enableValidation(validationConfig);
+function enableValidation({ formSelector, ...restConfig }) {
+  const formList = Array.from(document.querySelectorAll(formSelector));
+
+  formList.forEach((formElement) => {
+    setEventListeners(formElement, restConfig)
+  })
+}

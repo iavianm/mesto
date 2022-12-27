@@ -1,12 +1,3 @@
-enableValidation(validationConfig);
-function enableValidation({ formSelector, ...restConfig }) {
-  const formList = Array.from(document.querySelectorAll(formSelector));
-
-  formList.forEach((formElement) => {
-    setEventListeners(formElement, restConfig)
-  })
-}
-
 function showInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
 
