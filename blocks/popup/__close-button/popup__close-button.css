@@ -10,11 +10,10 @@
 
 	top: -40px;
 	right: -40px;
-	
+
 	cursor: pointer;
-	background: url(../../../images/close.svg);
-	background-position: center;
-	border: 0;
+  background: url(../../../images/close.svg) center;
+  border: 0;
 }
 
 .popup__close-button:hover {
@@ -25,7 +24,7 @@
 	.popup__close-button {
 		max-width: 20px;
 		max-height: 20px;
-		top: -36;
+		top: -36px;
 		right: 0;
 	}
 }
