@@ -46,20 +46,6 @@ function closePopup(anyPopup, form) {
 
   document.removeEventListener('keydown', closePopupByEscape);
   document.removeEventListener('mouseup', closePopupByOverlay);
-
-  if (form) {
-    form.reset();
-
-    const formInputsList = Array.from(form.querySelectorAll('.popup__input'));
-    formInputsList.forEach((input) => {
-      input.classList.remove('popup__input_type_error');
-    })
-
-    const formSpansList = Array.from(form.querySelectorAll('.popup__input-error'));
-    formSpansList.forEach((span) => {
-      span.textContent = ''
-    })
-  }
 }
 
 function profileInfoSubmitHandler(event) {
@@ -68,7 +54,8 @@ function profileInfoSubmitHandler(event) {
   profileName.textContent = infoInputName.value;
   profileDescription.textContent = infoInputDescription.value;
 
-  closePopup(infoPopup, formInfo);
+  clearForm(formInfo)
+  closePopup(infoPopup);
 }
 
 function elementCardSubmitHandler(event) {
@@ -82,7 +69,8 @@ function elementCardSubmitHandler(event) {
   const card = createCard(newUserCard);
   addCard(card, elements);
 
-  closePopup(cardPopup, formCard);
+  clearForm(formCard);
+  closePopup(cardPopup);
 }
 
 initialCards.forEach((el) => {
@@ -126,12 +114,27 @@ function addCard(card, container) {
   container.prepend(card);
 }
 
+function clearForm(form) {
+  form.reset();
+
+  const formInputsList = Array.from(form.querySelectorAll('.popup__input'));
+  formInputsList.forEach((input) => {
+    input.classList.remove('popup__input_type_error');
+  })
+
+  const formSpansList = Array.from(form.querySelectorAll('.popup__input-error'));
+  formSpansList.forEach((span) => {
+    span.textContent = ''
+  })
+}
+
 profileEditButton.addEventListener('click', () => {
   editProfileInfo(infoPopup, buttonFormInfo);
 });
 
 infoPopupCloseButton.addEventListener('click', () => {
-  closePopup(infoPopup, formInfo);
+  closePopup(infoPopup);
+  clearForm(formInfo);
 });
 
 profileAddButton.addEventListener('click', () => {
@@ -139,7 +142,8 @@ profileAddButton.addEventListener('click', () => {
 });
 
 cardPopupCloseButton.addEventListener('click', () => {
-  closePopup(cardPopup, formCard);
+  closePopup(cardPopup);
+  clearForm(formCard)
 });
 
 imagePopupCloseButton.addEventListener('click', () => {
