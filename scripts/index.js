@@ -1,3 +1,7 @@
+import { initialCards, validationConfig } from "./variables.js";
+import {Card} from "./Card.js";
+import {FormValidator} from "./FormValidator.js";
+
 function editProfileInfo(anyPopup, button) {
   infoInputName.value = profileName.textContent;
   infoInputDescription.value = profileDescription.textContent;
@@ -19,7 +23,7 @@ function addUserCard(anyPopup, button) {
   openPopup(anyPopup);
 }
 
-function openPopup(anyPopup) {
+export function openPopup(anyPopup) {
   anyPopup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEscape);
   document.addEventListener('mouseup', closePopupByOverlay);
@@ -64,49 +68,17 @@ function elementCardSubmitHandler(event) {
     link: cardInputUrl.value,
   };
 
-  const card = createCard(newUserCard);
-  addCard(card, elements);
+  const card = new Card(newUserCard, templateElement);
+  addCard(card.generateCard(), elements);
 
   clearForm(formCard);
   closePopup(cardPopup);
 }
 
 initialCards.forEach((el) => {
-  const card = createCard(el);
-  addCard(card, elements);
+  const card = new Card(el, templateElement);
+  addCard(card.generateCard(), elements);
 });
-
-function addChangeLike(event) {
-  event.target.classList.toggle('element__like_active');
-}
-
-function addRemoveCard(event) {
-  event.target.closest('.element').remove();
-}
-
-function addImagePopup(event) {
-  imagePopupPhoto.src = event.target.src;
-  imagePopupPhoto.alt = event.target.alt;
-  imagePopupTitle.textContent = event.target.alt;
-
-  openPopup(imagePopup);
-}
-
-function createCard(el) {
-  const userCard = templateElement.cloneNode(true);
-
-  const photoElement = userCard.querySelector('.element__photo');
-  photoElement.src = el.link;
-  photoElement.alt = el.name;
-  userCard.querySelector('.element__title').textContent = el.name;
-  userCard.querySelector('.element__like').addEventListener('click', addChangeLike);
-
-  userCard.querySelector('.element__delete').addEventListener('click', addRemoveCard);
-
-  photoElement.addEventListener('click', addImagePopup);
-
-  return userCard;
-}
 
 function addCard(card, container) {
   container.prepend(card);
@@ -151,12 +123,8 @@ imagePopupCloseButton.addEventListener('click', () => {
 formInfo.addEventListener('submit', profileInfoSubmitHandler);
 formCard.addEventListener('submit', elementCardSubmitHandler);
 
+const formInfoValidator = new FormValidator(validationConfig, formInfo);
+formInfoValidator.enableValidation();
 
-enableValidation(validationConfig);
-function enableValidation({ formSelector, ...restConfig }) {
-  const formList = Array.from(document.querySelectorAll(formSelector));
-
-  formList.forEach((formElement) => {
-    setEventListeners(formElement, restConfig)
-  })
-}
+const formCardValidator = new FormValidator(validationConfig, formCard);
+formCardValidator.enableValidation();
