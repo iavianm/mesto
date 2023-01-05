@@ -31,7 +31,8 @@ const validationConfig = {
   submitButtonSelector: '.popup__form-button',
   inactiveButtonClass: 'popup__form-button_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input_error_active'
+  errorClass: 'popup__input_error_active',
+  inputErrors: '.popup__input-error',
 };
 
 export { initialCards, validationConfig }

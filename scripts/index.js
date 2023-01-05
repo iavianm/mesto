@@ -1,44 +1,48 @@
-import { initialCards, validationConfig } from "./variables.js";
-import {Card} from "./Card.js";
-import {FormValidator} from "./FormValidator.js";
+import { initialCards, validationConfig } from "./constants.js";
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
+import {
+  profileEditButton, profileAddButton, profileName, profileDescription, infoPopup, infoPopupCloseButton,
+  elements, cardPopup, cardPopupCloseButton, imagePopup, imagePopupCloseButton, formInfo,
+  infoInputName, infoInputDescription, formCard, cardInputTitle, cardInputUrl, imagePopupPhoto, imagePopupTitle
+} from "./elements.js"
 
-function editProfileInfo(anyPopup, button) {
+function openProfileInfo() {
   infoInputName.value = profileName.textContent;
   infoInputDescription.value = profileDescription.textContent;
 
-  if(infoInputName.value !== '' || infoInputDescription.value !== '') {
-    button.classList.remove('popup__form-button_disabled')
-    button.removeAttribute("disabled");
-  }
-
-  openPopup(anyPopup);
+  formInfoValidator.changeFormButton()
+  openPopup(infoPopup);
 }
 
-function addUserCard(anyPopup, button) {
-  if(cardInputTitle.value === '' || cardInputUrl.value === '') {
-    button.classList.add('popup__form-button_disabled')
-    button.setAttribute("disabled", true);
-  }
-
-  openPopup(anyPopup);
+function addUserCard() {
+  formCardValidator.changeFormButton()
+  openPopup(cardPopup);
 }
 
-export function openPopup(anyPopup) {
+function openImagePopup(title, url) {
+  imagePopupTitle.textContent = title;
+  imagePopupPhoto.src = url;
+  imagePopupPhoto.alt = url;
+  openPopup(imagePopup);
+}
+
+function openPopup(anyPopup) {
   anyPopup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEscape);
   document.addEventListener('mouseup', closePopupByOverlay);
 }
 
-function closePopupByEscape(evt) {
-  if (evt.key === 'Escape') {
+function closePopupByEscape(event) {
+  if (event.key === 'Escape') {
     const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
 }
 
-function closePopupByOverlay(evt) {
-  if (evt.target.classList.contains('popup_opened')) {
-    const openPopup = document.querySelector('.popup_opened');
+function closePopupByOverlay(event) {
+  if (event.target.classList.contains('popup_opened')) {
+    const openPopup = event.target;
     closePopup(openPopup);
   }
 }
@@ -56,7 +60,7 @@ function profileInfoSubmitHandler(event) {
   profileName.textContent = infoInputName.value;
   profileDescription.textContent = infoInputDescription.value;
 
-  clearForm(formInfo)
+  formInfoValidator.clearForm()
   closePopup(infoPopup);
 }
 
@@ -68,52 +72,37 @@ function elementCardSubmitHandler(event) {
     link: cardInputUrl.value,
   };
 
-  const card = new Card(newUserCard, templateElement);
-  addCard(card.generateCard(), elements);
+  createCard(newUserCard, '#element', openImagePopup, elements);
 
-  clearForm(formCard);
+  formCardValidator.clearForm()
   closePopup(cardPopup);
 }
 
 initialCards.forEach((el) => {
-  const card = new Card(el, templateElement);
-  addCard(card.generateCard(), elements);
+  createCard(el, '#element', openImagePopup, elements);
 });
+
+function createCard(obj, selector, popup, container) {
+  const card = new Card(obj, selector, popup);
+  addCard(card.generateCard(), container)
+}
 
 function addCard(card, container) {
   container.prepend(card);
 }
 
-function clearForm(form) {
-  form.reset();
-
-  const formInputsList = Array.from(form.querySelectorAll('.popup__input'));
-  formInputsList.forEach((input) => {
-    input.classList.remove('popup__input_type_error');
-  })
-
-  const formSpansList = Array.from(form.querySelectorAll('.popup__input-error'));
-  formSpansList.forEach((span) => {
-    span.textContent = ''
-  })
-}
-
-profileEditButton.addEventListener('click', () => {
-  editProfileInfo(infoPopup, buttonFormInfo);
-});
+profileEditButton.addEventListener('click', () => openProfileInfo());
 
 infoPopupCloseButton.addEventListener('click', () => {
   closePopup(infoPopup);
-  clearForm(formInfo);
+  formInfoValidator.clearForm()
 });
 
-profileAddButton.addEventListener('click', () => {
-  addUserCard(cardPopup, buttonFormCard);
-});
+profileAddButton.addEventListener('click', () => addUserCard());
 
 cardPopupCloseButton.addEventListener('click', () => {
   closePopup(cardPopup);
-  clearForm(formCard)
+  formCardValidator.clearForm()
 });
 
 imagePopupCloseButton.addEventListener('click', () => {

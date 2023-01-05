@@ -3,7 +3,36 @@ class FormValidator {
     this._config = validationConfig;
     this._formElement = form;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._config.inputSelector));
+    this._inputListError = Array.from(this._formElement.querySelectorAll(this._config.inputErrors));
     this._buttonElement = this._formElement.querySelector(this._config.submitButtonSelector);
+  }
+
+  changeFormButton() {
+    const check = this._inputList.some(input => {
+      return input.value
+    })
+
+    if(check) {
+      this._buttonElement.classList.remove('popup__form-button_disabled')
+      this._buttonElement.removeAttribute("disabled");
+    }
+
+    if(!check) {
+      this._buttonElement.classList.add('popup__form-button_disabled')
+      this._buttonElement.setAttribute("disabled", true);
+    }
+  }
+
+  clearForm() {
+    this._formElement.reset();
+
+    this._inputList.forEach((input) => {
+      input.classList.remove(this._config.inputErrorClass);
+    })
+
+    this._inputListError.forEach((span) => {
+      span.textContent = ''
+    })
   }
 
   _showInputError(inputElement) {
@@ -53,10 +82,6 @@ class FormValidator {
         this._toggleButtonState();
       });
     });
-
-    this._formElement.addEventListener('submit', (event) => {
-      event.preventDefault();
-    })
   }
 
   enableValidation() {

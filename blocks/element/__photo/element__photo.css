@@ -4,6 +4,7 @@
 	height: 100%;
   width: 100%;
 	cursor: pointer;
+  background: #545454;
 }
 
 .element__photo:hover {
