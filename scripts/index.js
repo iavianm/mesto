@@ -23,7 +23,7 @@ function addUserCard() {
 function openImagePopup(title, url) {
   imagePopupTitle.textContent = title;
   imagePopupPhoto.src = url;
-  imagePopupPhoto.alt = url;
+  imagePopupPhoto.alt = title;
   openPopup(imagePopup);
 }
 
