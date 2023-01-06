@@ -5,7 +5,7 @@ const initialCards = [
   },
   {
     name: 'Парк',
-    link: './images/park.jpg',
+    link: 'https://images.pexels.com/photos/15035871/pexels-photo-15035871.jpeg?cs=srgb&dl=pexels-mikhail-15035871.jpg&fm=jpg&_gl=1*b40fv2*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MDc3My4wLjAuMA..',
   },
   {
     name: 'Игры',
@@ -13,11 +13,11 @@ const initialCards = [
   },
   {
     name: 'Лошадка',
-    link: './images/horse.jpg',
+    link: 'https://images.pexels.com/photos/15035932/pexels-photo-15035932.jpeg?cs=srgb&dl=pexels-mikhail-15035932.jpg&fm=jpg&_gl=1*exgbb2*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MTEzOC4wLjAuMA..',
   },
   {
     name: 'Поиски мышей',
-    link: './images/mouse.jpg',
+    link: 'https://images.pexels.com/photos/15035925/pexels-photo-15035925.jpeg?cs=srgb&dl=pexels-mikhail-15035925.jpg&fm=jpg&_gl=1*exgbb2*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MTEzOC4wLjAuMA..',
   },
   {
     name: 'Отдых',
