@@ -1,27 +1,27 @@
 const initialCards = [
   {
     name: 'Привет',
-    link: '../images/hello.jpg',
+    link: './images/hello.jpg',
   },
   {
     name: 'Парк',
-    link: '../images/park.jpg',
+    link: './images/park.jpg',
   },
   {
     name: 'Игры',
-    link: '../images/game.jpg',
+    link: './images/game.jpg',
   },
   {
     name: 'Лошадка',
-    link: '../images/horse.jpg',
+    link: './images/horse.jpg',
   },
   {
     name: 'Поиски мышей',
-    link: '../images/mouse.jpg',
+    link: './images/mouse.jpg',
   },
   {
     name: 'Отдых',
-    link: '../images/morning.jpg',
+    link: './images/morning.jpg',
   },
 ];
 
