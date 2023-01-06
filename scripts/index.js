@@ -11,12 +11,12 @@ function openProfileInfo() {
   infoInputName.value = profileName.textContent;
   infoInputDescription.value = profileDescription.textContent;
 
-  formInfoValidator.changeFormButton()
+  formInfoValidator.toggleButtonState()
   openPopup(infoPopup);
 }
 
 function addUserCard() {
-  formCardValidator.changeFormButton()
+  formCardValidator.toggleButtonState()
   openPopup(cardPopup);
 }
 
@@ -82,8 +82,8 @@ initialCards.forEach((el) => {
   createCard(el, '#element', openImagePopup, elements);
 });
 
-function createCard(obj, selector, popup, container) {
-  const card = new Card(obj, selector, popup);
+function createCard(obj, selector, openImagePopup, container) {
+  const card = new Card(obj, selector, openImagePopup);
   addCard(card.generateCard(), container)
 }
 
