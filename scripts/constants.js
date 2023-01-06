@@ -1,7 +1,7 @@
 const initialCards = [
   {
     name: 'Привет',
-    link: './images/hello.jpg',
+    link: 'https://images.pexels.com/photos/15035870/pexels-photo-15035870.jpeg?cs=srgb&dl=pexels-mikhail-15035870.jpg&fm=jpg&_gl=1*24ip4t*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MDc3My4wLjAuMA..',
   },
   {
     name: 'Парк',
@@ -9,7 +9,7 @@ const initialCards = [
   },
   {
     name: 'Игры',
-    link: './images/game.jpg',
+    link: 'https://images.pexels.com/photos/15035873/pexels-photo-15035873.jpeg?cs=srgb&dl=pexels-mikhail-15035873.jpg&fm=jpg&_gl=1*35wytq*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MDY3NC4wLjAuMA..',
   },
   {
     name: 'Лошадка',
@@ -21,7 +21,7 @@ const initialCards = [
   },
   {
     name: 'Отдых',
-    link: './images/morning.jpg',
+    link: 'https://images.pexels.com/photos/15035872/pexels-photo-15035872.jpeg?cs=srgb&dl=pexels-mikhail-15035872.jpg&fm=jpg&_gl=1*rmmz53*_ga*ODE3MjM1NDgwLjE2NzMwNDA0ODI.*_ga_8JE65Q40S6*MTY3MzA0MDQ4Mi4xLjEuMTY3MzA0MDc3My4wLjAuMA..',
   },
 ];
 
