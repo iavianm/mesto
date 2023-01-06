@@ -8,14 +8,15 @@ import {
 } from "./elements.js"
 
 function openProfileInfo() {
+  formInfoValidator.clearForm()
   infoInputName.value = profileName.textContent;
   infoInputDescription.value = profileDescription.textContent;
-
   formInfoValidator.toggleButtonState()
   openPopup(infoPopup);
 }
 
-function addUserCard() {
+function openAddUserCard() {
+  formCardValidator.clearForm()
   formCardValidator.toggleButtonState()
   openPopup(cardPopup);
 }
@@ -95,14 +96,12 @@ profileEditButton.addEventListener('click', () => openProfileInfo());
 
 infoPopupCloseButton.addEventListener('click', () => {
   closePopup(infoPopup);
-  formInfoValidator.clearForm()
 });
 
-profileAddButton.addEventListener('click', () => addUserCard());
+profileAddButton.addEventListener('click', () => openAddUserCard());
 
 cardPopupCloseButton.addEventListener('click', () => {
   closePopup(cardPopup);
-  formCardValidator.clearForm()
 });
 
 imagePopupCloseButton.addEventListener('click', () => {
